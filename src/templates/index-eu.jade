@@ -5,8 +5,8 @@ head
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(name='description', content='')
     meta(name='author', content='')
-    title Leihotik
-    link(rel='stylesheet', href='css/app.css')
+    title Leihotik EU
+    link(rel='stylesheet', href='../assets/css/app.css')
   body
     nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
       .container
@@ -16,11 +16,7 @@ head
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          //
-             You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it)
           a.navbar-brand.leihotik-brand.texto-marca(href='index.html') Leihotik
-        //
-           Collect the nav links, forms, and other content for toggling
         .collapse.navbar-collapse.navbar-ex1-collapse
           ul.nav.navbar-nav.navbar-right
             li
@@ -32,74 +28,48 @@ head
             li
               a(href='#contacto') Contacto
             li
-              a(href='#') es
+              a(href='/es/') es
             li
-              a(href='#') eu
+              a(href='/eu/') eu
             li
-              a(href='#') fr
-        //
-           /.navbar-collapse
-      //
-         /.container
+              a(href='/fr/') fr
     #myCarousel.carousel.slide
-      //
-         Indicators
       ol.carousel-indicators
         li.active(data-target='#myCarousel', data-slide-to='0')
         li(data-target='#myCarousel', data-slide-to='1')
         li(data-target='#myCarousel', data-slide-to='2')
-      //
-         Wrapper for slides
       .carousel-inner
         .item.active
-          .fill(style='background-image: url(\'http://placehold.it/1900x1080&text=Foto 1\');')
+          //- .fill(style='background-image: url(\'http://placehold.it/1900x1080&text=Foto 1\');')
           .carousel-caption.texto-marca
             h1 Instalación de ventanas PVC y aluminio
         .item
-          .fill(style='background-image: url(\'http://placehold.it/1900x1080&text=Foto 2\');')
+          //- .fill(style='background-image: url(\'http://placehold.it/1900x1080&text=Foto 2\');')
           .carousel-caption.texto-marca
             h1 Más de 14 años de experiencia
         .item
-          .fill(style='background-image: url(\'http://placehold.it/1900x1080&text=Foto 3\');')
+          //- .fill(style='background-image: url(\'http://placehold.it/1900x1080&text=Foto 3\');')
           .carousel-caption.texto-marca
             h1 Pida presupuesto sin compromiso
-      //
-         Controls
-      a.left.carousel-control(href='#myCarousel', data-slide='prev')
-        span.icon-prev
-      a.right.carousel-control(href='#myCarousel', data-slide='next')
-        span.icon-next
+      //- a.left.carousel-control(href='#myCarousel', data-slide='prev')
+      //-   span.icon-prev
+      //- a.right.carousel-control(href='#myCarousel', data-slide='next')
+      //-   span.icon-next
     a(name='quienes')
-    .section
+    .section.section-first
       .container
         .row
-          .col-lg-4.col-md-4
+          .col-lg-12
             h3
               i.fa.fa-question-circle
               span.texto-marca
-                | Quién
+                | Quiénes somos
             p
               | Somos una empresa especializada en el servicio de instalación de ventanas y todo tipo de cerramientos de aluminio y PVC.
-          .col-lg-4.col-md-4
-            h3
-              i.fa.fa-question-circle
-              span.texto-marca
-                | Cómo
             p
               | Personal cualificado con más de 14 años de experiencia con el fin de satisfacer las necesidades de nuestros clientes.
-          .col-lg-4.col-md-4
-            h3
-              i.fa.fa-question-circle
-              span.texto-marca
-                | Por qué
             p
               | Trabajamos con materiales de primera calidad para obtener los mejores resultados.
-        //
-           /.row
-      //
-         /.container
-    //
-       /.section
     a(name='servicios')
     .section-colored.text-center
       .container
@@ -140,7 +110,7 @@ head
                 | Contraventanas
               li
                 i.fa-li.fa.fa-check-square-o
-                | Menorquinas
+                | Mallorquinas
           .col-lg-4.col-md-4
             ul.fa-ul.lista
               li
@@ -167,12 +137,6 @@ head
               li
                 i.fa-li.fa.fa-check-square-o
                 | Mantenimiento posventa
-        //
-           /.row
-      //
-         /.container
-    //
-       /.section-colored
     a(name='fotos')
     .section
       .container
@@ -182,28 +146,22 @@ head
             hr
           .col-lg-4.col-md-4.col-sm-6
             a(href='#')
-              img.img-responsive.img-home-portfolio(src='img/1.jpg')
+              img.img-responsive.img-home-portfolio(src='../assets/img/1.jpg')
           .col-lg-4.col-md-4.col-sm-6
             a(href='#')
-              img.img-responsive.img-home-portfolio(src='img/2.jpg')
+              img.img-responsive.img-home-portfolio(src='../assets/img/2.jpg')
           .col-lg-4.col-md-4.col-sm-6
             a(href='#')
-              img.img-responsive.img-home-portfolio(src='img/3.jpg')
+              img.img-responsive.img-home-portfolio(src='../assets/img/3.jpg')
           .col-lg-4.col-md-4.col-sm-6
             a(href='#')
-              img.img-responsive.img-home-portfolio(src='img/4.jpg')
+              img.img-responsive.img-home-portfolio(src='../assets/img/4.jpg')
           .col-lg-4.col-md-4.col-sm-6
             a(href='#')
-              img.img-responsive.img-home-portfolio(src='img/5.jpg')
+              img.img-responsive.img-home-portfolio(src='../assets/img/5.jpg')
           .col-lg-4.col-md-4.col-sm-6
             a(href='#')
-              img.img-responsive.img-home-portfolio(src='img/6.jpg')
-        //
-           /.row
-      //
-         /.container
-    //
-       /.section
+              img.img-responsive.img-home-portfolio(src='../assets/img/6.jpg')
     a(name='contacto')
     .section-colored
       .container
@@ -213,11 +171,11 @@ head
             ul.fa-ul.lista
               li
                 i.fa-li.fa.fa-phone-square
-                | (+34) 678 517 391 (Anartz)
+                | (+34) 678 517 391
               li
                 i.fa-li.fa.fa-envelope
                 a(href='mailto:info@leihotik.com')
-                  | info@leihotik.com
+                  | leihotik@leihotik.com
           .col-lg-6.col-md-6.col-sm-6
             div
               iframe(width='100%', height='400', frameborder='0', scrolling='no', marginheight='0', marginwidth='0', src='http://maps.google.com/maps?f=q&source=s_q&hl=es&geocode=&q=Urdaneta%2B10%2BZarautz&ie=UTF8&z=15&t=m&iwloc=near&output=embed')
@@ -230,22 +188,10 @@ head
                     td(align='right')
                       small
                         a(href='http://www.embedgooglemap.com') embed google map
-        //
-           /.row
-      //
-         /.container
-    //
-       /.section-colored
     .container
       hr
       footer
         .row
           .col-lg-12
             p Copyright © Leihotik 2013
-    //
-       /.container
-    //
-       Bootstrap core JavaScript
-    //
-       Placed at the end of the document so the pages load faster
-    script(src='js/app.js')
+    script(src='../assets/js/app.js')

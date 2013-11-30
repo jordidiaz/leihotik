@@ -10,6 +10,7 @@ module.exports = function (grunt) {
   // configurable paths
   var config = {
     app: 'app',
+    assets: 'app/assets',
     src: 'src',
   };
 
@@ -28,35 +29,31 @@ module.exports = function (grunt) {
             debug: false
           }
         },
-        files: [
-          {
-            expand: true,
-            cwd: '<%= config.src %>/templates/',
-            src: ['**/*.jade'],
-            dest: '<%= config.app %>/views/',
-            ext: '.html'
-          }
-        ]
+        files: {
+          '<%= config.app %>/es/index.html': '<%= config.src %>/templates/index-es.jade',
+          '<%= config.app %>/eu/index.html': '<%= config.src %>/templates/index-eu.jade',
+          '<%= config.app %>/fr/index.html': '<%= config.src %>/templates/index-fr.jade'
+        }
       }
     },
     stylus: {
       compile: {
         files: {
-          '<%= config.app %>/css/app.css': ['<%= config.src %>/stylesheets/*.styl']
+          '<%= config.assets %>/css/app.css': ['<%= config.src %>/stylesheets/*.styl']
         }
       }
     },
     coffee: {
       compile: {
         files: {
-          '<%= config.app %>/js/app.js': ['<%= config.src %>/javascript/*.coffee']
+          '<%= config.assets %>/js/app.js': ['<%= config.src %>/javascript/*.coffee']
         }
       }
     },
     uglify: {
       my_target: {
         files: {
-          '<%= config.app %>/js/app.js': [
+          '<%= config.assets %>/js/app.js': [
                                           '<%= config.app %>/js/app.js',
                                           'bower_components/jquery/jquery.min.js',
                                           'bower_components/bootstrap/dist/js/bootstrap.min.js',
@@ -68,20 +65,14 @@ module.exports = function (grunt) {
     cssmin: {
       combine: {
         files: {
-          '<%= config.app %>/css/app.css': [
+          '<%= config.assets %>/css/app.css': [
                                             '<%= config.src %>/stylesheets/css/*.css',
                                             'bower_components/bootstrap/dist/css/bootstrap.min.css',
                                             'bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
                                             'bower_components/font-awesome/css/font-awesome.min.css',
-                                            '<%= config.app %>/css/app.css'
+                                            '<%= config.assets %>/css/app.css'
                                             ]
         }
-      }
-    },
-    rename: {
-      moveIndex: {
-        src: '<%= config.app %>/views/index.html',
-        dest: '<%= config.app %>/index.html'
       }
     },
     connect: {
@@ -125,19 +116,19 @@ module.exports = function (grunt) {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= config.app %>/*.html',
-          '<%= config.app %>/css/*.css',
-          '<%= config.app %>/js/*.js',
-          '<%= config.app %>/views/*.html}'
+          '<%= config.app %>/index.html',
+          '<%= config.app %>/*/index.html',
+          '<%= config.assets %>/css/*.css',
+          '<%= config.assets %>/js/*.js'
         ]
       }
     },
     copy: {
       main: {
         files: [
-          {expand: true, cwd: 'bower_components/font-awesome/fonts/', src: ['*'], dest: '<%= config.app %>/fonts/', filter: 'isFile'},
-          {expand: true, cwd: 'bower_components/bootstrap/dist/fonts/', src: ['*'], dest: '<%= config.app %>/fonts/', filter: 'isFile'},
-          {expand: true, cwd: '<%= config.src %>/images/', src: ['*'], dest: '<%= config.app %>/img/', filter: 'isFile'}
+          {expand: true, cwd: 'bower_components/font-awesome/fonts/', src: ['*'], dest: '<%= config.assets %>/fonts/', filter: 'isFile'},
+          {expand: true, cwd: 'bower_components/bootstrap/dist/fonts/', src: ['*'], dest: '<%= config.assets %>/fonts/', filter: 'isFile'},
+          {expand: true, cwd: '<%= config.src %>/images/', src: ['*'], dest: '<%= config.assets %>/img/', filter: 'isFile'}
           ]
       },
       robots: {
@@ -145,7 +136,7 @@ module.exports = function (grunt) {
         dest: '<%= config.app %>/robots.txt'
       }
     },
-    clean: ['<%= config.app %>/**/*.*']
+    clean: ['<%= config.app %>/*']
   });
 
   grunt.registerTask('build', [
@@ -157,7 +148,6 @@ module.exports = function (grunt) {
     'jshint',
     'uglify',
     'cssmin',
-    'rename',
     'copy'
   ]);
 
