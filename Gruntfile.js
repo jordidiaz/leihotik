@@ -139,6 +139,10 @@ module.exports = function (grunt) {
         src: '<%= config.src %>/robots.txt',
         dest: '<%= config.app %>/robots.txt'
       },
+      indexRedirect: {
+        src: '<%= config.src %>/index.php',
+        dest: '<%= config.app %>/index.php'
+      },
       bootstrap_image_gallery_img: {
         src: 'bower_components/blueimp-bootstrap-image-gallery/img/loading.gif',
         dest: '<%= config.assets %>/img/loading.gif'
