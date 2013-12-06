@@ -57,7 +57,9 @@ module.exports = function (grunt) {
                                           '<%= config.app %>/js/app.js',
                                           'bower_components/jquery/jquery.min.js',
                                           'bower_components/bootstrap/dist/js/bootstrap.min.js',
-                                          '<%= config.src %>/javascript/js/*.js'
+                                          'bower_components/blueimp-gallery/js/jquery.blueimp-gallery.min.js',
+                                          'bower_components/blueimp-bootstrap-image-gallery/js/bootstrap-image-gallery.min.js',
+                                          '<%= config.src %>/javascript/js/*.js',
                                           ]
         }
       }
@@ -70,6 +72,8 @@ module.exports = function (grunt) {
                                             'bower_components/bootstrap/dist/css/bootstrap.min.css',
                                             'bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
                                             'bower_components/font-awesome/css/font-awesome.min.css',
+                                            'bower_components/blueimp-gallery/css/blueimp-gallery.min.css',
+                                            'bower_components/blueimp-bootstrap-image-gallery/css/bootstrap-image-gallery.min.css',
                                             '<%= config.assets %>/css/app.css'
                                             ]
         }
@@ -134,6 +138,10 @@ module.exports = function (grunt) {
       robots: {
         src: '<%= config.src %>/robots.txt',
         dest: '<%= config.app %>/robots.txt'
+      },
+      bootstrap_image_gallery_img: {
+        src: 'bower_components/blueimp-bootstrap-image-gallery/img/loading.gif',
+        dest: '<%= config.assets %>/img/loading.gif'
       }
     },
     clean: ['<%= config.app %>/*']
