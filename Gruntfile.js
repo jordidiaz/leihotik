@@ -139,6 +139,10 @@ module.exports = function (grunt) {
         src: '<%= config.src %>/robots.txt',
         dest: '<%= config.app %>/robots.txt'
       },
+      favicon: {
+        src: '<%= config.src %>/images/favicon.ico',
+        dest: '<%= config.app %>/favicon.ico'
+      },
       indexRedirect: {
         src: '<%= config.src %>/index.php',
         dest: '<%= config.app %>/index.php'
