@@ -1,0 +1,10 @@
+{
+  "name": "package",
+  "version": "0.0.0",
+  "dependencies": {
+    "bootstrap": "~3.0.1",
+    "font-awesome": "~4.0.1",
+    "blueimp-bootstrap-image-gallery": "~3.1.0"
+  }
+}
+
