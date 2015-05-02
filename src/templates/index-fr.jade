@@ -27,8 +27,10 @@ head
               a(href='#quienes') Qui nous sommes
             li
               a(href='#servicios') Services
-            //- li
-            //-   a(href='#fotos') Photos
+            li
+              a(href='#aluminio') Alluminium
+            li
+              a(href='#pvc') PVC
             li
               a(href='#contacto') Contact
             li
@@ -36,27 +38,16 @@ head
             li
               a(href='../eu/') eu
     #myCarousel.carousel.slide
-      //- ol.carousel-indicators
-      //-   li.active(data-target='#myCarousel', data-slide-to='0')
-      //-   li(data-target='#myCarousel', data-slide-to='1')
-      //-   li(data-target='#myCarousel', data-slide-to='2')
       .carousel-inner
         .item.active
-          //- .fill(style='background-image: url(\'http://placehold.it/1900x1080&text=Foto 1\');')
           .carousel-caption.texto-marca
             h1 Installation de fenêtres en PVC et en alluminium
         .item
-          //- .fill(style='background-image: url(\'http://placehold.it/1900x1080&text=Foto 2\');')
           .carousel-caption.texto-marca
             h1 Plus de 14 années d´expérience
         .item
-          //- .fill(style='background-image: url(\'http://placehold.it/1900x1080&text=Foto 3\');')
           .carousel-caption.texto-marca
             h1 Demandez un devis sans engagement
-      //- a.left.carousel-control(href='#myCarousel', data-slide='prev')
-      //-   span.icon-prev
-      //- a.right.carousel-control(href='#myCarousel', data-slide='next')
-      //-   span.icon-next
     a(name='quienes')
     .section
       .container
@@ -141,64 +132,197 @@ head
                   li
                     i.fa-li.fa.fa-check-square-o
                     | Maçonnerie: Fermeture de caisses de persiennes
-    //- #blueimp-gallery.blueimp-gallery
-    //-   .slides
-    //-   h3.title
-    //-   a.prev ‹
-    //-   a.next ›
-    //-   a.close ×
-    //-   a.play-pause
-    //-   ol.indicator
-    //-   .modal.fade
-    //-     .modal-dialog
-    //-       .modal-content
-    //-         .modal-header
-    //-           button.close(type='button', aria-hidden='true') ×
-    //-           h4.modal-title
-    //-         .modal-body.next
-    //-         .modal-footer
-    //-           button.btn.btn-default.pull-left.prev(type='button')
-    //-             i.glyphicon.glyphicon-chevron-left
-    //-             | Antérieur
-    //-           button.btn.btn-primary.next(type='button')
-    //-             | Suivant
-    //-             i.glyphicon.glyphicon-chevron-right
-    //- a(name='fotos')
-    //- #links
-    //-   .section
-    //-     .container
-    //-       .row
-    //-         .col-lg-12.text-center
-    //-           h2.texto-marca Photos
-    //-           h4.texto-marca (appuyer pour voir les images)
-    //-           hr
-    //-       .row
-    //-         .col-lg-4.col-md-4.col-sm-4
-    //-           a(href='../assets/img/leihotik-1.jpg', data-gallery='data-gallery')
-    //-             img.img-responsive.img-home-portfolio(src='../assets/img/leihotik-1.jpg')
-    //-         .col-lg-4.col-md-4.col-sm-4
-    //-           a(href='../assets/img/leihotik-2.jpg', data-gallery='data-gallery')
-    //-             img.img-responsive.img-home-portfolio(src='../assets/img/leihotik-2.jpg')
-    //-         .col-lg-4.col-md-4.col-sm-4
-    //-           a(href='../assets/img/leihotik-3.jpg', data-gallery='data-gallery')
-    //-             img.img-responsive.img-home-portfolio(src='../assets/img/leihotik-3.jpg')
-    //-       .row
-    //-         .col-lg-4.col-md-4.col-sm-4
-    //-           a(href='../assets/img/leihotik-4.jpg', data-gallery='data-gallery')
-    //-             img.img-responsive.img-home-portfolio(src='../assets/img/leihotik-4.jpg')
-    //-         .col-lg-4.col-md-4.col-sm-4
-    //-           a(href='../assets/img/leihotik-5.jpg', data-gallery='data-gallery')
-    //-             img.img-responsive.img-home-portfolio(src='../assets/img/leihotik-5.jpg')
-    //-         .col-lg-4.col-md-4.col-sm-4
-    //-           a(href='../assets/img/leihotik-6.jpg', data-gallery='data-gallery')
-    //-             img.img-responsive.img-home-portfolio(src='../assets/img/leihotik-6.jpg')
-    //-       .row
-    //-         .col-lg-4.col-md-4.col-sm-4.col-lg-offset-2.col-md-offset-2.col-sm-offset-2
-    //-           a(href='../assets/img/leihotik-7.jpg', data-gallery='data-gallery')
-    //-             img.img-responsive.img-home-portfolio(src='../assets/img/leihotik-7.jpg')
-    //-         .col-lg-4.col-md-4.col-sm-4
-    //-           a(href='../assets/img/leihotik-8.jpg', data-gallery='data-gallery')
-    //-             img.img-responsive.img-home-portfolio(src='../assets/img/leihotik-8.jpg')
+    #modal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal')
+              span(aria-hidden='true') ×
+            h4#modaltitle.modal-title
+          .modal-body
+            img.modal-img(src='#')
+            p.modal-text
+    a(name='aluminio')
+    .section
+      .container
+        .row
+          .col-lg-12.text-center
+            h2.texto-marca Fenêtres en alluminium
+        .row
+          .col-lg-3
+            .thumbnail
+              a(href='#', data-toggle="modal", data-target="#modal", data-title="Serie COR-70 HOJA OCULTA R.P.T. Canal 16", data-imgsrc="../assets/img/a/cor-70-hoja-oculta-con-rpt-cc161-608x350.jpg", data-text='Sistema de Carpintería de HOJA OCULTA con Rotura de Puente Térmico de 70 mm. de sección en marco, Canal 16.')
+                img(src='../assets/img/a/cor-70-hoja-oculta-con-rpt-cc161-608x350.jpg', alt='Serie COR-70 HOJA OCULTA R.P.T. Canal 16')
+              .caption
+                h3
+                  | Serie COR-70 HOJA OCULTA R.P.T. Canal 16
+                a(href='../assets/pdf/a/Ficha_Tecnica_70_Hoja_Oculta.pdf', target='_blank')
+                  i.fa.fa-file-text
+                  |  Fiche de données
+          .col-lg-3
+            .thumbnail
+              a(href='#', data-toggle="modal", data-target="#modal", data-title="Serie 4200 R.P.T.", data-imgsrc="../assets/img/a/4200-corredera-con-rpt1-700x350.jpg", data-text='Sistema de carpintería corredera con Rotura de Puente Térmico con una sección de 60 mm. en marco Sistema versatil con marco y hojas perimetrales. Permite la fabricación en dos, tres y cuatro hojas con posibilidad de marco tricarril.')
+                img(src='../assets/img/a/4200-corredera-con-rpt1-700x350.jpg', alt='Serie 4200 R.P.T.')
+              .caption
+                h3
+                  | Serie 4200 R.P.T.
+                a(href='../assets/pdf/a/Ficha_tecnica_4200.pdf', target='_blank')
+                  i.fa.fa-file-text
+                  |  Fiche de données
+          .col-lg-3
+            .thumbnail
+              a(href='#', data-toggle="modal", data-target="#modal", data-title="Serie COR-70 R.P.T. Canal 16", data-imgsrc="../assets/img/a/cor-70-hoja-oculta-con-rpt-cc16-608x350.jpg", data-text='Sistema de Carpintería con Rotura de Puente Térmico de 70 mm. de sección en marco y 75 mm en hoja. Sistema de puerta y ventana abisagrada de canal europeo con rotura de puente térmico. Amplias soluciones en aperturas exterior e interior, practicable, oscilobatiente, oscilo-paralela, etc.')
+                img(src='../assets/img/a/cor-70-hoja-oculta-con-rpt-cc16-608x350.jpg', alt='Serie COR-70 R.P.T. Canal 16')
+              .caption
+                h3
+                  | Serie COR-70 R.P.T. Canal 16
+                a(href='../assets/pdf/a/Ficha_tecnica_COR-70_16.pdf', target='_blank')
+                  i.fa.fa-file-text
+                  |  Fiche de données
+          .col-lg-3
+            .thumbnail
+              a(href='#', data-toggle="modal", data-target="#modal", data-title="Serie COR-60 R.P.T.", data-imgsrc="../assets/img/a/1_cor-60-rpt-600x350.jpg", data-text='Sistema de Carpintería con Rotura de Puente Térmico de 60 mm. de sección en marco y 69 mm en hoja. Sistema de puerta y ventana abisagrada de canal europeo con rotura de puente térmico. Amplias soluciones en aperturas exterior e interior, practicable, oscilobatiente, oscilo-paralela, etc.')
+                img(src='../assets/img/a/1_cor-60-rpt-600x350.jpg', alt='Serie COR-60 R.P.T.')
+              .caption
+                h3
+                  | Serie COR-60 R.P.T.
+                a(href='../assets/pdf/a/Ficha_Tecnica_60.pdf', target='_blank')
+                  i.fa.fa-file-text
+                  |  Fiche de données
+        .row
+          .col-lg-3
+            .thumbnail
+              a(href='#', data-toggle="modal", data-target="#modal", data-title="Serie COR-60 R.P.T. Hoja Oculta", data-imgsrc="../assets/img/a/cor-60-hoja-oculta-rpt-655x350.jpg", data-text='Sistema de Carpintería de HOJA OCULTA con Rotura de Puente Térmico de 60 mm. de sección en marco. Sistema de Carpintería de HOJA OCULTA con Rotura de Puente Térmico de 60 mm. de sección en marco. Sistema de ventanas abisagrada de canal europeo con rotura de puente térmico. Amplias soluciones en practicable, oscilobatiente, abatible.')
+                img(src='../assets/img/a/cor-60-hoja-oculta-rpt-655x350.jpg', alt='Serie COR-60 R.P.T. Hoja Oculta')
+              .caption
+                h3
+                  | Serie COR-60 R.P.T. Hoja Oculta
+                a(href='../assets/pdf/a/Ficha_Tecnica_60_Hoja_Oculta.pdf.pdf', target='_blank')
+                  i.fa.fa-file-text
+                  |  Fiche de données
+          .col-lg-3
+            .thumbnail
+              a(href='#', data-toggle="modal", data-target="#modal", data-title="Serie 2000 Abisagrada", data-imgsrc="../assets/img/a/1_cor-2000-681x350.jpg", data-text='Sistema de carpintería SIN Rotura de Puente Térmico con una sección de 45 mm en marco y 53 en hoja Sistema de puerta y ventana abisagrada de canal europeo. Amplias soluciones en aperturas exterior e interior, practicable, oscilobatiente, oscilo-paralela, etc.')
+                img(src='../assets/img/a/1_cor-2000-681x350.jpg', alt='Serie 2000 Abisagrada')
+              .caption
+                h3
+                  | Serie 2000 Abisagrada
+                a(href='../assets/pdf/a/Ficha_tecnica_2000_ab.pdf', target='_blank')
+                  i.fa.fa-file-text
+                  |  Fiche de données
+          .col-lg-3
+            .thumbnail
+              a(href='#', data-toggle="modal", data-target="#modal", data-title="Serie 2000 Corredera Aluminio", data-imgsrc="../assets/img/a/2000-corredera-perimetral-700x350.jpg", data-text='Sistema de carpintería corredera SIN Rotura de Puente Térmico con una sección de 45 mm. en marco Sistema versatil con marco y hojas perimetrales. Permite la fabricación en dos, tres y cuatro hojas con posibilidad de marco tricarril.')
+                img(src='../assets/img/a/2000-corredera-perimetral-700x350.jpg', alt='Serie 2000 Corredera Aluminio')
+              .caption
+                h3
+                  | Serie 2000 Corredera Aluminio
+                a(href='../assets/pdf/a/Ficha_tecnica_2000_co.pdf', target='_blank')
+                  i.fa.fa-file-text
+                  |  Fiche de données
+          .col-lg-3
+            .thumbnail
+              a(href='#', data-toggle="modal", data-target="#modal", data-title="Serie 4500 R.P.T. Corredera Elevable", data-imgsrc="../assets/img/a/4200-corredera-con-rpt-700x350.jpg", data-text='Sistema corredera Elevable con Rotura de Puente Térmico Sistema diseñado para puertas de grandes dimensiones que basa su funcionamiento en un sistema en el que las hojas se montan con un mecanismo que permiten la elevación de las mismas en la maniobra de apertura y el descenso en la de cierre. De manera que las puerta cerrada descansan sobre juntas de estanqueidad longitudinales inferiores y superiores produciendose su enclavamiento en cualquier posición. Permite dimensiones de hoja de hasta 3300 mm de ancho por 3000 mm de alto y un límite de peso de hasta 400 kg.')
+                img(src='../assets/img/a/4200-corredera-con-rpt-700x350.jpg', alt='Serie 4500 R.P.T. Corredera Elevable')
+              .caption
+                h3
+                  | Serie 4500 R.P.T. Corredera Elevable 
+                a(href='../assets/pdf/a/Ficha_Tecnica_4500_CC.pdf', target='_blank')
+                  i.fa.fa-file-text
+                  |  Fiche de données
+        .row
+          .col-lg-3
+            .thumbnail
+              a(href='#', data-toggle="modal", data-target="#modal", data-title="Mallorquina de Aluminio", data-imgsrc="../assets/img/a/Mallorquina-3-531x350.jpg", data-text='Sistema Mallorquina Sistema de contraventana malloquina abisagrada que ofrece la posibilidad de lamas fijas y orientables. Este último tipo de lama permite una graduación total del paso de luz, consiguiendo así el ambiente interior deseado.')
+                img(src='../assets/img/a/Mallorquina-3-531x350.jpg', alt='Mallorquina de Aluminio')
+              .caption
+                h3
+                  | Mallorquina de Aluminio
+                a(href='../assets/pdf/a/Ficha_tecnica_Mall.pdf', target='_blank')
+                  i.fa.fa-file-text
+                  |  Fiche de données
+          .col-lg-3
+            .thumbnail
+              a(href='#', data-toggle="modal", data-target="#modal", data-title="Sistema Tamiz de Aluminio", data-imgsrc="../assets/img/a/DSC_9794-700x350.jpg", data-text='Sistema de contraventana de lamas fijas y orientables con posibilidad de apertura abisagrada y corredera.')
+                img(src='../assets/img/a/DSC_9794-700x350.jpg', alt='Sistema Tamiz de Aluminio')
+              .caption
+                h3
+                  | Sistema Tamiz de Aluminio
+                a(href='../assets/pdf/a/Ficha_tecnica_tamiz.pdf', target='_blank')
+                  i.fa.fa-file-text
+                  |  Fiche de données
+          .col-lg-3
+            .thumbnail
+              a(href='#', data-toggle="modal", data-target="#modal", data-title="Sistema Porticón Exterior", data-imgsrc="../assets/img/a/DSC_9731-700x350.jpg", data-text='Sistema de contraventana exterior de aluminio a base de paneles ciegos machihembrados que permiten acoplar travesaños horizontales, travesaños tipo Z y simplemente con panel liso. Posibilidades de instalar tanto en la parte interior de la mocheta como al exterior enrasado con la fachada.')
+                img(src='../assets/img/a/DSC_9731-700x350.jpg', alt='Sistema Porticón Exterior')
+              .caption
+                h3
+                  | Sistema Porticón Exterior 
+          .col-lg-3
+            .thumbnail
+              a(href='#', data-toggle="modal", data-target="#modal", data-title="Serie 3500 R.P.T.", data-imgsrc="../assets/img/a/cor-3500-con-rpt-600x350.jpg", data-text='Sistema de carpintería con Rotura de Puente Térmico con una sección de 54 mm en marco y 63 en hoja Sistema de puerta y ventana abisagrada de canal europeo con rotura de puente térmico. Amplias soluciones en aperturas exterior e interior, practicable, oscilobatiente, oscilo-paralela, etc.')
+                img(src='../assets/img/a/cor-3500-con-rpt-600x350.jpg', alt='Serie 3500 R.P.T.')
+              .caption
+                h3
+                  | Serie 3500 R.P.T.
+                a(href='../assets/pdf/a/Ficha_tecnica_3500.pdf', target='_blank')
+                  i.fa.fa-file-text
+                  |  Fiche de données
+    a(name='pvc')
+    .section-colored
+      .container
+        .row
+          .col-lg-12.text-center
+            h2.texto-marca Fenêtres en PVC
+        .row
+          .col-lg-3
+            .thumbnail
+              a(href='#', data-toggle="modal", data-target="#modal", data-title="Serie Euro Design 70", data-imgsrc="../assets/img/p/1_0000E611-brillant-color-madera-2-600x350.jpg", data-text='Sistema de carpintería de PVC de 70 mm. de sección en marco Profundidad constructiva: 70 mm / junta de tope Número de cámaras: 5 cámaras Aislamiento térmico: valor Uf= 1,3 W/m²K (con refuerzo estándar) Ahorro energético: hasta el 56% (base comparativa: ventanas de madera/PVC con un valor Uw =2,7 W/m²K) Aislamiento acústico: hasta la clase de protección acústica 4 (VDI 2719) Acabado antirrobo: hasta la clase de resistencia 2 (DIN V ENV 1627) Impermeabilidd al aire/a las ráfagas de lluvia: hasta clase de carga/esfuerzo C (DIN 18055)')
+                img(src='../assets/img/p/1_0000E611-brillant-color-madera-2-600x350.jpg', alt='Serie Euro Design 70')
+              .caption
+                h3
+                  | Serie Euro Design 70
+                a(href='../assets/pdf/p/Euro-Design_70_774702_ES.pdf', target='_blank')
+                  i.fa.fa-file-text
+                  |  Fiche de données
+          .col-lg-3
+            .thumbnail
+              a(href='#', data-toggle="modal", data-target="#modal", data-title="Serie Alutop Geneo", data-imgsrc="../assets/img/p/1_dsc_0376-700x350.jpg", data-text='Sistema de carpintería Serie Geneo con revestimiento de aluminio al exterior – Gran resistencia a la intemperie – Rechaza la suciedad – Extensa diversidad de colores y superficies')
+                img(src='../assets/img/p/1_dsc_0376-700x350.jpg', alt='Serie Alutop Geneo')
+              .caption
+                h3
+                  | Serie Alutop Geneo
+          .col-lg-3
+            .thumbnail
+              a(href='#', data-toggle="modal", data-target="#modal", data-title="Mallorquina PVC  ", data-imgsrc="../assets/img/p/00012557-600x350.jpg", data-text='Sistema Mallorquina PVC Profundidad constructiva: 50 mm Solapado hoja-marco: 10mm Ancho visto lama: 35,6 ó 55mm Espesor máximo lama ciega: 28mm Resistencia a cargas de viento EN 1932: clase 6')
+                img(src='../assets/img/p/00012557-600x350.jpg', alt='Mallorquina PVC  ')
+              .caption
+                h3
+                  | Mallorquina PVC 
+                a(href='../assets/pdf/p/Mallorquina_PVC.pdf', target='_blank')
+                  i.fa.fa-file-text
+                  |  Fiche de données
+          .col-lg-3
+            .thumbnail
+              a(href='#', data-toggle="modal", data-target="#modal", data-title="Corredera Elevable de PVC", data-imgsrc="../assets/img/p/1_0000df44-600x350.jpg", data-text='Sistema de corredera Elevable de PVC Aislamiento térmico: valor Uf 1,9 W/m2K Impermeabilidad al aire: clase de impermeablidad al aire 4 Profundidad constructiva: 70 mm Acabado antirrobo: hasta la clase de resistencia 2 (WK2) Aislamiento acústico: hasta la clase de protección acústica 4 Superficie: alta calidad, lisa, cerrada y fácil de limpiar Estanqueidad lluvias torrenciales: hasta clase de solicitación 9A Ficha de Producto (530.32KB)')
+                img(src='../assets/img/p/1_0000df44-600x350.jpg', alt='Corredera Elevable de PVC')
+              .caption
+                h3
+                  | Corredera Elevable de PVC
+                a(href='../assets/pdf/p/Puertas_Correderas_Elevable.pdf', target='_blank')
+                  i.fa.fa-file-text
+                  |  Fiche de données
+        .row
+          .col-lg-3
+            .thumbnail
+              a(href='#', data-toggle="modal", data-target="#modal", data-title="Corredera Lineal de PVC", data-imgsrc="../assets/img/p/1__mg_9269g-600x350.jpg", data-text='Sistema de corredera lineal de PVC Resistencia a la carga del viento: Clase B2 Estanqueidad al agua: Clase 6B Permeabilidad al aire: Clase 3 Aislamiento acústico (4/16/4): 29 (-1;-3) dB Transmitancia térmica hasta: 1,8 W/m2K')
+                img(src='../assets/img/p/1__mg_9269g-600x350.jpg', alt='Corredera Lineal de PVC')
+              .caption
+                h3
+                  | Corredera Lineal de PVC
+                a(href='../assets/pdf/p/S717_717702_11-2008.pdf', target='_blank')
+                  i.fa.fa-file-text
+                  |  Fiche de données
     a(name='contacto')
     .section
       .container
