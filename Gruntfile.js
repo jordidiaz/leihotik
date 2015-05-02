@@ -54,12 +54,9 @@ module.exports = function (grunt) {
       my_target: {
         files: {
           '<%= config.assets %>/js/app.js': [
-                                          '<%= config.app %>/js/app.js',
-                                          'bower_components/jquery/jquery.min.js',
+                                          'bower_components/jquery/dist/jquery.min.js',
                                           'bower_components/bootstrap/dist/js/bootstrap.min.js',
-                                          'bower_components/blueimp-gallery/js/jquery.blueimp-gallery.min.js',
-                                          'bower_components/blueimp-bootstrap-image-gallery/js/bootstrap-image-gallery.min.js',
-                                          '<%= config.src %>/javascript/js/*.js',
+                                          '<%= config.app %>/assets/js/app.js'
                                           ]
         }
       }
@@ -132,7 +129,8 @@ module.exports = function (grunt) {
         files: [
           {expand: true, cwd: 'bower_components/font-awesome/fonts/', src: ['*'], dest: '<%= config.assets %>/fonts/', filter: 'isFile'},
           {expand: true, cwd: 'bower_components/bootstrap/dist/fonts/', src: ['*'], dest: '<%= config.assets %>/fonts/', filter: 'isFile'},
-          {expand: true, cwd: '<%= config.src %>/images/', src: ['*'], dest: '<%= config.assets %>/img/', filter: 'isFile'}
+          {expand: true, cwd: '<%= config.src %>/images/', src: ['**/*'], dest: '<%= config.assets %>/img/'},
+          {expand: true, cwd: '<%= config.src %>/pdf/', src: ['**/*'], dest: '<%= config.assets %>/pdf/'}
           ]
       },
       robots: {
